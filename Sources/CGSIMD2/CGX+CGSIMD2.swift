@@ -17,7 +17,7 @@ extension CGPoint: CGSIMD2 {
     
     @usableFromInline
     init(_ simd: SIMD2<CGFloat.NativeType>) {
-        self.init(x: simd.x, y: simd.y)
+        self.init(x: CGFloat.NativeType(simd.x), y: CGFloat.NativeType(simd.y))
     }
 }
 
@@ -31,7 +31,7 @@ extension CGVector: CGSIMD2 {
     
     @usableFromInline
     init(_ simd: SIMD2<CGFloat.NativeType>) {
-        self.init(dx: simd.x, dy: simd.y)
+        self.init(dx: CGFloat.NativeType(simd.x), dy: CGFloat.NativeType(simd.y))
     }
 }
 
@@ -45,6 +45,6 @@ extension CGSize: CGSIMD2 {
     
     @usableFromInline
     init(_ simd: SIMD2<CGFloat.NativeType>) {
-        self.init(width: simd.x, height: simd.y)
+        self.init(width: CGFloat.NativeType(simd.x), height: CGFloat.NativeType(simd.y))
     }
 }
