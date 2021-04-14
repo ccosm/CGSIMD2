@@ -57,4 +57,29 @@
             assert(y.x == 0)
             assert(y.y == 1)
         }
+        
+        func testReadmeExample() {
+            let boundsSize = CGSize(width: 100, height: 100)
+            var frameToCenterOld = CGRect(x: 10, y: 20, width: 30, height: 40)
+            
+            // center horizontally
+            if frameToCenterOld.size.width < boundsSize.width {
+                frameToCenterOld.origin.x = (boundsSize.width - frameToCenterOld.size.width) / 2
+            } else {
+                frameToCenterOld.origin.x = 0
+            }
+
+            // center vertically
+            if frameToCenterOld.size.height < boundsSize.height {
+                frameToCenterOld.origin.y = (boundsSize.height - frameToCenterOld.size.height) / 2
+            } else {
+                frameToCenterOld.origin.y = 0
+            }
+            
+            var frameToCenterNew = CGRect(x: 10, y: 20, width: 30, height: 40)
+
+            frameToCenterNew.origin = CGPoint.zero + (frameToCenterNew.size < boundsSize) * ((boundsSize - frameToCenterNew.size) / 2)
+            
+            assert(frameToCenterOld == frameToCenterNew)
+        }
     }
