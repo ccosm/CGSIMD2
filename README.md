@@ -12,16 +12,18 @@ Situations where you want said types to behave more interoperably are simply too
     var frameToCenter: CGRect = /* ... */
     
     // center horizontally
-    if (frameToCenter.size.width < boundsSize.width)
+    if frameToCenter.size.width < boundsSize.width {
         frameToCenter.origin.x = (boundsSize.width - frameToCenter.size.width) / 2
-    else
+    } else {
         frameToCenter.origin.x = 0
+    }
 
     // center vertically
-    if (frameToCenter.size.height < boundsSize.height)
+    if frameToCenter.size.height < boundsSize.height {
         frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2
-    else
+    } else {
         frameToCenter.origin.y = 0
+    }
 
 With overloaded operators and Boole-ified comparison operators this code reduces to:
 
