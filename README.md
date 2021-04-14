@@ -23,7 +23,7 @@ Situations where you want said types to behave more interoperably are simply too
     else
         frameToCenter.origin.y = 0
 
-With overloaded operators and Bool-ified comparison operators this code reduces to:
+With overloaded operators and Boole-ified comparison operators this code reduces to:
 
     frameToCenter.origin = CGPoint.zero + (frameToCenter.size < boundsSize) * ((boundsSize - frameToCenter.size) / 2)
 
