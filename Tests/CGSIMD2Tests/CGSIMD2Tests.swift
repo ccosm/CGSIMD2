@@ -84,4 +84,12 @@ final class CGSIMD2Tests: XCTestCase {
         
         assert(frameToCenterOld == frameToCenterNew)
     }
+    
+    func testIncrementPoint() {
+        var x = CGPoint.zero
+        x += 1
+        
+        assert(x.x == 1)
+        assert(x.y == 1)
+    }
 }

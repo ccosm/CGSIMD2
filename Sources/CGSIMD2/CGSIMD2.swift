@@ -33,6 +33,26 @@ extension CGSIMD2 {
         Self(rhs.simd / lhs.simd)
     }
     
+    @inlinable
+    public static func+=(rhs: inout Self, lhs: CGFloat.NativeType) {
+        rhs = rhs + lhs
+    }
+    
+    @inlinable
+    public static func-=(rhs: inout Self, lhs: CGFloat.NativeType) {
+        rhs = rhs - lhs
+    }
+    
+    @inlinable
+    public static func*=(rhs: inout Self, lhs: CGFloat.NativeType) {
+        rhs = rhs * lhs
+    }
+    
+    @inlinable
+    public static func/=(rhs: inout Self, lhs: CGFloat.NativeType) {
+        rhs = rhs / lhs
+    }
+    
 /*
 # Python 3
 
