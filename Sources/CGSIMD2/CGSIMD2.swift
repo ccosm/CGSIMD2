@@ -53,6 +53,26 @@ extension CGSIMD2 {
         rhs = rhs / lhs
     }
     
+    @inlinable
+    public static func+=(rhs: inout Self, lhs: CGSIMD2) {
+        rhs = rhs + lhs
+    }
+    
+    @inlinable
+    public static func-=(rhs: inout Self, lhs: CGSIMD2) {
+        rhs = rhs - lhs
+    }
+    
+    @inlinable
+    public static func*=(rhs: inout Self, lhs: CGSIMD2) {
+        rhs = rhs * lhs
+    }
+    
+    @inlinable
+    public static func/=(rhs: inout Self, lhs: CGSIMD2) {
+        rhs = rhs / lhs
+    }
+    
 /*
 # Python 3
 

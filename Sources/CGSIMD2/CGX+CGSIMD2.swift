@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Marcos Canel on 4/14/21.
-//
-
 import CoreGraphics
 
 extension CGPoint: CGSIMD2 {
