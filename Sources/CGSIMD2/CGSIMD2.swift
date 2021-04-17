@@ -301,4 +301,18 @@ for (op, arg) in product(['<', '<=', '>', '>='], [('Self', 'CGFloat.NativeType',
     public static func >=(rhs: CGFloat.NativeType, lhs: Self) -> Self {
         Self(SIMD2.zero.replacing(with: 1, where: rhs .>= lhs))
     }
+    
+    @inlinable
+    public func max(of other: CGSIMD2) -> Self {
+        let mask = self > other
+        
+        return mask*self + (1 - mask)*other
+    }
+    
+    @inlinable
+    public func min(of other: CGSIMD2) -> Self {
+        let mask = self < other
+        
+        return mask*self + (1 - mask)*other
+    }
 }

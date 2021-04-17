@@ -92,4 +92,22 @@ final class CGSIMD2Tests: XCTestCase {
         assert(x.x == 1)
         assert(x.y == 1)
     }
+    
+    func testMax() {
+        let x = CGPoint(x: 1, y: 3)
+        let y = CGSize(width: 0, height: 4)
+        let z = x.max(of: y)
+        
+        assert(type(of: z) == CGPoint.self)
+        assert(z == CGPoint(x: 1, y: 4))
+    }
+    
+    func testMin() {
+        let x = CGPoint(x: 1, y: 3)
+        let y = CGSize(width: 0, height: 4)
+        let z = x.min(of: y)
+        
+        assert(type(of: z) == CGPoint.self)
+        assert(z == CGPoint(x: 0, y: 3))
+    }
 }
